@@ -1,6 +1,6 @@
 ﻿namespace SpaceChickens
 {
-    partial class Form1
+    partial class SpaceChickens
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SpaceChickens));
+            this.SuspendLayout();
+            // 
+            // SpaceChickens
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "SpaceChickens";
+            this.Text = "Space Chickens";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
