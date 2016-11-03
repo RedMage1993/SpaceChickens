@@ -28,12 +28,12 @@ namespace SpaceChickens
         {
             Application.DoEvents();
 
+            gsm.push(new StartMenu(gsm));
             bgwDrawing.RunWorkerAsync();
         }
 
         private void bgwDrawing_DoWork(object sender, DoWorkEventArgs e)
         {
-            // Push Start Menu into gsm
             // Update
             // Render
             // Invalidate
@@ -41,6 +41,7 @@ namespace SpaceChickens
 
         private void bgwDrawing_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
         {
+            gsm.Dispose();
             graphics.Dispose();
             dbmp.Dispose();
 
