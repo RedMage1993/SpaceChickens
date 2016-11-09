@@ -28,15 +28,16 @@ namespace SpaceChickens
         {
             Application.DoEvents();
 
-            gsm.push(new StartMenu(gsm));
+            gsm.Push(new StartMenu(gsm));
             bgwDrawing.RunWorkerAsync();
         }
 
         private void bgwDrawing_DoWork(object sender, DoWorkEventArgs e)
         {
-            // Update
-            // Render
-            // Invalidate
+            //gsm.Update();
+            //gsm.Render();
+
+            //pbxGame.Invalidate();
         }
 
         private void bgwDrawing_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)

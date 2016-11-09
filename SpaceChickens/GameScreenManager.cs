@@ -9,7 +9,7 @@ namespace SpaceChickens
     class GameScreenManager : IDisposable
     {
         public Graphics graphics { get; private set; }
-        public Stack<GameScreen> screens { get; private set; }
+        private Stack<GameScreen> screens { get; set; }
 
         public GameScreenManager(Graphics g)
         {
@@ -17,14 +17,25 @@ namespace SpaceChickens
             screens = new Stack<GameScreen>();
         }
 
-        public void push(GameScreen screen)
+        public void Push(GameScreen screen)
         {
             screens.Push(screen);
         }
 
-        public GameScreen top()
+        public void Set(GameScreen screen)
         {
-            return screens.Peek();
+            screens.Pop().Dispose();
+            screens.Push(screen);
+        }
+
+        public void Update()
+        {
+            screens.Peek().Update();
+        }
+
+        public void Render()
+        {
+            screens.Peek().Render();
         }
 
         public void Dispose()
