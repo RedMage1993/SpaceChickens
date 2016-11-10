@@ -22,7 +22,7 @@ namespace SpaceChickens
             gsCount++;
         }
 
-        public abstract void Update();
+        public abstract void Update(float deltaTime);
         public abstract void Render();
         public abstract void Dispose();
     }

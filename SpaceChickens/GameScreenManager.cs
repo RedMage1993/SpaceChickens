@@ -28,9 +28,15 @@ namespace SpaceChickens
             screens.Push(screen);
         }
 
-        public void Update()
+        public bool Update(float deltaTime)
         {
-            screens.Peek().Update();
+            if (screens.Count > 0)
+            {
+                screens.Peek().Update(deltaTime);
+                return true;
+            }
+            else
+                return false;
         }
 
         public void Render()

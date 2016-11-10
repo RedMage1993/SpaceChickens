@@ -9,7 +9,7 @@ namespace SpaceChickens
     {
         public StartMenu(GameScreenManager _gsm) : base(_gsm) {}
 
-        public override void Update()
+        public override void Update(float dt)
         {
 
         }

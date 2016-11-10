@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SpaceChickens
@@ -34,10 +36,22 @@ namespace SpaceChickens
 
         private void bgwDrawing_DoWork(object sender, DoWorkEventArgs e)
         {
-            //gsm.Update();
-            //gsm.Render();
+            Stopwatch dt = new Stopwatch();
+            float tempDt = 0.0f;
 
-            //pbxGame.Invalidate();
+            dt.Start();
+            while (gsm.Update(tempDt))
+            {
+                gsm.Render();
+                pbxGame.Invalidate();
+
+                Thread.Sleep(1);
+
+                tempDt = dt.ElapsedMilliseconds / 1000.0f;
+                dt.Reset();
+            }
+
+            dt.Stop();
         }
 
         private void bgwDrawing_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
