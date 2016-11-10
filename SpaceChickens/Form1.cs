@@ -49,6 +49,7 @@ namespace SpaceChickens
 
                 tempDt = dt.ElapsedMilliseconds / 1000.0f;
                 dt.Reset();
+                dt.Start();
             }
 
             dt.Stop();
