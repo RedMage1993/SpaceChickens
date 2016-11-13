@@ -51,8 +51,6 @@ namespace SpaceChickens
             {
                 screen.Dispose();
             }
-
-            // Graphics is passed in, disposed at another time.
         }
     }
 }
