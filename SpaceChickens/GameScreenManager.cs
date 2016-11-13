@@ -41,6 +41,7 @@ namespace SpaceChickens
 
         public void Render()
         {
+            graphics.Clear(Color.White);
             screens.Peek().Render();
         }
 
