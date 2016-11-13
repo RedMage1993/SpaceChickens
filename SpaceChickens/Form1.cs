@@ -45,7 +45,12 @@ namespace SpaceChickens
                 gsm.Render();
                 pbxGame.Invalidate();
 
-                Thread.Sleep(1);
+                //Thread.Sleep(1);
+
+                // Temporary (not going to use dt right now).
+                // This sets a cap on how fast game can run.
+                while (dt.ElapsedMilliseconds < 30)
+                    Thread.Sleep(1);
 
                 tempDt = dt.ElapsedMilliseconds / 1000.0f;
                 dt.Reset();
