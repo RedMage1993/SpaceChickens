@@ -15,6 +15,7 @@ namespace SpaceChickens
     {
         private DirectBitmap dbmp;
         private Graphics graphics;
+        private SpaceChickensGame spaceChickens;
         private GameScreenManager gsm;
 
         public SpaceChickens()
@@ -23,7 +24,7 @@ namespace SpaceChickens
 
             dbmp = new DirectBitmap(pbxGame.Width, pbxGame.Height);
             graphics = Graphics.FromImage(dbmp.Bitmap);
-            gsm = new GameScreenManager(graphics);
+            gsm = new GameScreenManager(graphics, spaceChickens);
 
             graphics.TranslateTransform(pbxGame.Width >> 1, pbxGame.Height >> 1);
         }
