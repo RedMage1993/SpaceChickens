@@ -9,13 +9,11 @@ namespace SpaceChickens
     class GameScreenManager : IDisposable
     {
         public Graphics graphics { get; private set; }
-        public SpaceChickensGame spaceChickens { get; private set; }
         private Stack<GameScreen> screens { get; set; }
 
-        public GameScreenManager(Graphics g, SpaceChickensGame scg)
+        public GameScreenManager(Graphics g)
         {
             graphics = g;
-            spaceChickens = scg;
             screens = new Stack<GameScreen>();
         }
 
