@@ -9,12 +9,16 @@ namespace SpaceChickens
     class GameScreenManager : IDisposable
     {
         public Graphics graphics { get; private set; }
+        public int width { get; private set; }
+        public int height { get; private set; }
         private Stack<GameScreen> screens { get; set; }
 
-        public GameScreenManager(Graphics g)
+        public GameScreenManager(Graphics g, int w, int h)
         {
             graphics = g;
             screens = new Stack<GameScreen>();
+            width = w;
+            height = h;
         }
 
         public void Push(GameScreen screen)
@@ -41,7 +45,6 @@ namespace SpaceChickens
 
         public void Render()
         {
-            graphics.Clear(Color.White);
             screens.Peek().Render();
         }
 

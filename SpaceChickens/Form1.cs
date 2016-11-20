@@ -23,7 +23,9 @@ namespace SpaceChickens
 
             dbmp = new DirectBitmap(pbxGame.Width, pbxGame.Height);
             graphics = Graphics.FromImage(dbmp.Bitmap);
-            gsm = new GameScreenManager(graphics);
+            gsm = new GameScreenManager(graphics, pbxGame.Width, pbxGame.Height);
+
+            pbxGame.Image = dbmp.Bitmap;
 
             graphics.TranslateTransform(pbxGame.Width >> 1, pbxGame.Height >> 1);
         }
