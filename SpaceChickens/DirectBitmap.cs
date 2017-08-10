@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homework_06
+namespace SpaceChickens
 {
     public class DirectBitmap : IDisposable
     {
